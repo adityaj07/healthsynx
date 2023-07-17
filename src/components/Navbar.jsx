@@ -16,14 +16,14 @@ const Navbar = () => {
             <ul className="flex items-center justify-center gap-6">
                 {
                     links.map((link)=>(
-                        <li key={link} className="p-2">{link}</li>
+                        <li key={link} className="p-2 cursor-pointer hover:text-gray-300 transition-colors duration-200">{link}</li>
                     ))
                 }
             </ul>
         </div>
         <div className="flex items-center gap-4">
-            <Button text="Signup" className="bg-black text-white"/>
-            <Button text="Login" className="border border-black"/>
+            <Button text="Signup" className="bg-black text-white  border border-black hover:bg-white hover:text-black transition-colors duration-150 "/>
+            <Button text="Login" className="border border-black hover:bg-black hover:text-white transition-colors duration-150"/>
         </div>
       </nav>
     </>
