@@ -3,6 +3,7 @@ import Button from "./ui/Button";
 import { FaArrowRight } from "react-icons/fa";
 import hero from "../assets/hero.svg"
 import pattern from "../assets/ooorganize.svg"
+// import pattern from "../assets/pattern.svg"
 
 const Home = () => {
   return (
@@ -33,6 +34,7 @@ const Home = () => {
       </div>
       <img src={pattern} alt="pattern" className="w-[20rem] h-[20rem] absolute top-8 -left-[9rem]"/>
       <img src={pattern} alt="pattern" className="w-[15rem] h-[15rem] absolute top-72 -right-[8rem]"/>
+      {/* <img src={pattern} alt="pattern" className="absolute top-0 mx-auto opacity-20 w-screen" /> */}
     </div>
 
   );

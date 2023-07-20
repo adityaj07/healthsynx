@@ -1,19 +1,12 @@
-import React from "react";
+import React from 'react'
 
-const Card = ({ icon: Icon, title, desc }) => {
+const Card = ({title, desc, className}) => {
   return (
-    <div>
-      <div className="bg-white text-black rounded-xl w-[21rem] h-[11rem] p-4">
-        <div className="flex items-start gap-4">
-          <Icon size={80} className="-mt-6"/>
-          <div className="flex flex-col items-start gap-4">
-            <span className="font-bold text-start">{title}</span>
-            <p className="text-start text-sm">{desc}</p>
-          </div>
-        </div>
-      </div>
+    <div className={`p-4 rounded-lg text-start ${className}`}>
+      <h1 className='font-semibold text-xl mb-2'>{title}</h1>
+      <p>{desc}</p>
     </div>
-  );
-};
+  )
+}
 
-export default Card;
+export default Card

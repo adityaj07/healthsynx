@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "./ui/Card";
+import Card from "./ui/FeatureCard";
 import featuredeco2 from "../assets/featuredeco2.svg";
 import featuredeco3 from "../assets/featuredeco3.svg";
 import { GoGoal } from "react-icons/go";
@@ -57,12 +57,12 @@ const Features = () => {
           <img
             src={featuredeco2}
             alt="featuredeco1"
-            className="absolute -right-[32rem]  -top-52"
+            className="absolute -right-[36rem] -top-56"
           />
           <img
             src={featuredeco3}
             alt="featuredeco3"
-            className="absolute -right-[35rem] top-36"
+            className="absolute -right-[40rem] top-8"
           />
         </div>
       </div>
