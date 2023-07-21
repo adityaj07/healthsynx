@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Button from "./ui/Button";
 import { FaArrowRight } from "react-icons/fa";
 import hero from "../assets/hero.svg";
@@ -24,12 +25,12 @@ const Home = () => {
             Elevate Your Fitness Journey with HealthSynx: Your Personalized
             Health and Fitness Tracker
           </p>
-          <div className="flex gap-2 items-center mt-6">
+          <Link to="/signup"><div className="flex gap-2 items-center mt-6">
             <Button text="Start tracking" className="bg-black text-white" />
             <div className="w-fit h-fit p-2 rounded-full bg-black">
               <FaArrowRight className="invert cursor-pointer" />
             </div>
-          </div>
+          </div></Link>
         </div>
 
         <div>
