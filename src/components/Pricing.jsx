@@ -6,7 +6,7 @@ import star3 from "../assets/star3.svg"
 
 const Pricing = () => {
   return (
-    <div className='rounded-lg bg-[#C0DEDD] px-16 py-10 flex justify-center items-center mt-24 mb-24'>
+    <div className='w-[70%] mx-auto rounded-lg bg-[#C0DEDD] px-16 py-10 flex justify-center items-center mt-24 mb-24'>
         <div className='bg-white relative flex flex-col gap-4 items-center justify-center p-4 rounded-lg w-[60%] mx-auto h-[20rem]'>
             <h1 className='font-bold text-4xl'>Pricing</h1>
             <p className='text-6xl font-black my-4'>Its free to use!!</p>

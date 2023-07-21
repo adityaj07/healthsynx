@@ -4,7 +4,7 @@ import Card from "./ui/Card";
 
 const Guide = () => {
   return (
-    <div className="mt-12 px-16 py-10 h-fit bg-[url('src/assets/guidedeco.svg')] bg-cover bg-center rounded-lg">
+    <div className="w-[70%] mx-auto mt-12 px-16 py-10 h-fit bg-[url('src/assets/guidedeco.svg')] bg-cover bg-center rounded-lg">
       <div className="flex flex-col justify-center items-center">
         <h1 className="text-start text-4xl font-bold mb-12 mt-4">How it works?</h1>
 

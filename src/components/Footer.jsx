@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import logo from "../assets/1.png";
 import logo1 from "../assets/HealthSynx.png";
 import Newsletter from "./Newsletter";
@@ -37,11 +38,18 @@ const links = [
 ];
 
 const Footer = () => {
+  const location = useLocation();
+
+  const isAboutOrContactOrFeaturesPage =
+    location.pathname === "/about" ||
+    location.pathname === "/contact" ||
+    location.pathname === "/features";
+
   return (
-    <div className="bg-[#F1DFDE] relative flex flex-col gap-24 rounded-lg mt-72 px-16 py-14">
-      <div className="absolute -top-[14rem] left-32 right-32">
+    <div className="bg-[#F1DFDE] w-[70%] mx-auto  relative flex flex-col gap-24 rounded-lg mt-72 px-16 py-14">
+     {!isAboutOrContactOrFeaturesPage && <div className="absolute -top-[14rem] left-32 right-32">
         <Newsletter />
-      </div>
+      </div>}
       <div className="grid grid-cols-3 gap-4 mt-16">
         <div className="flex flex-col gap-4">
           <img
