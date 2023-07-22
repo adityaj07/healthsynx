@@ -98,11 +98,11 @@ const Navbar = () => {
             <Link to="/signup" className="w-full">
               <Button
                 text="Signup"
-                className="border border-black bg-white text-black w-full"
+                className="border border-black bg-white text-black w-full hover:bg-[#C0DEDD] transition-colors duration-150"
               />
             </Link>
             <Link to="/login" className="w-full">
-              <Button text="Login" className="border border-white  w-full" />
+              <Button text="Login" className="border border-white  w-full hover:bg-[#F1DFDE] hover:text-black transition-colors duration-150" />
             </Link>
           </div>
         </div>
