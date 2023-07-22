@@ -12,12 +12,12 @@ import Pricing from "./Pricing";
 const Home = () => {
   return (
     <>
-      <div className="w-[90%] md:w-[70%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 mt-20 md:mt-32 h-[35rem] z-40">
+      <div className="w-[90%] lg:w-[70%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 mt-20 md:mt-32 h-[35rem] z-40">
         <div className="text-start relative">
           <small className="px-4 py-2 text-xs rounded-full bg-gray-500 text-white w-fit absolute mt-12">
             Integration with wearable⚡
           </small>
-          <h1 className="text-[3rem] sm:text-[3.5rem] md:text-6xl leading-snug font-extrabold mt-24 mb-3 md:mb-6">
+          <h1 className="text-[3rem] sm:text-[3.5rem] md:text-6xl md:leading-snug font-extrabold mt-24 mb-3 md:mb-6">
             Get Fit, <br /> Get Strong, <br />
             Get Healthy!
           </h1>
@@ -39,18 +39,18 @@ const Home = () => {
         <img
           src={pattern}
           alt="pattern"
-          className="w-[20rem] h-[20rem] absolute top-8 -left-[9rem] hidden md:block"
+          className="w-[20rem] h-[20rem] absolute top-8 -left-[9rem] hidden lg:block"
         />
         <img
           src={pattern}
           alt="pattern"
-          className="w-[15rem] h-[15rem] absolute top-72 -right-[8rem] hidden md:block"
+          className="w-[15rem] h-[15rem] absolute top-72 -right-[8rem] hidden lg:block"
         />
         
       </div>
-      {/* <Features />
-      <Guide />
-      <Pricing /> */}
+      <Features />
+      {/* <Guide /> */}
+      {/* <Pricing /> */}
     </>
   );
 };

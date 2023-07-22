@@ -62,12 +62,12 @@ const Navbar = () => {
           >
             {isNavOpen ? (
               <RiCloseFill
-                size={20}
+                size={25}
                 className="block lg:hidden animate-fade-in-out"
               />
             ) : (
               <RiMenu3Fill
-                size={20}
+                size={25}
                 className="block lg:hidden animate-fade-in-out"
               />
             )}
