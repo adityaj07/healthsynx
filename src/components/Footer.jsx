@@ -46,28 +46,28 @@ const Footer = () => {
     location.pathname === "/features";
 
   return (
-    <div className="bg-[#F1DFDE] w-[70%] mx-auto  relative flex flex-col gap-24 rounded-lg mt-72 px-16 py-14">
-     {!isAboutOrContactOrFeaturesPage && <div className="absolute -top-[14rem] left-32 right-32">
+    <div className="bg-[#F1DFDE] w-[90%] lg:w-[70%] mx-auto  relative flex flex-col gap-24 rounded-lg mt-[20rem] p-6 md:px-16 md:py-14">
+     {!isAboutOrContactOrFeaturesPage && <div className="absolute -top-64 left-6 right-6 md:-top-52 lg:-top-[14rem] lg:left-32 lg:right-32">
         <Newsletter />
       </div>}
-      <div className="grid grid-cols-3 gap-4 mt-16">
-        <div className="flex flex-col gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-16">
+        <div className="flex flex-col items-center md:items-start gap-4 mt-4 md:mt-0">
           <img
             src={logo}
             alt="logo"
             className="w-[7rem] h-[7rem] rounded-3xl"
           />
-          <p className="text-sm w-[90%]">
+          <p className="text-sm w-[90%] text-center md:text-start">
             We envision a world where everyone has the tools and knowledge to
             lead a healthy and active lifestyle.
           </p>
         </div>
-        <div className="flex items-center">
-          <ul className="grid grid-cols-2 gap-3">
+        <div className="flex flex-col md:flex-row items-center my-6 md:my-0">
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {links.map((link) => (
               <li
                 key={link}
-                className="text-black text-base hover:text-gray-900 cursor-pointer  underline"
+                className="text-black text-base hover:text-gray-900 cursor-pointer text-center md:text-start  underline"
               >
                 {link}
               </li>
@@ -88,17 +88,17 @@ const Footer = () => {
           })}
         </div>
       </div>
-      <div className="flex justify-between items-center border-t-[1px] border-gray-700 pt-6">
+      <div className="flex flex-col md:flex-row gap-4 md:gap-0 justify-between items-center border-t-[1px] border-gray-700 pt-6">
         <div className="flex gap-3 items-center">
           <img
             src={logo1}
             alt="logo"
-            className="rounded-md w-[3rem] h-[3rem]"
+            className="rounded-md w-[2rem] h-[2rem] md:w-[3rem] md:h-[3rem]"
           />
-          <span className="text-2xl font-extrabold">HealthSynx.</span>
+          <span className="text-base md:text-2xl font-extrabold">HealthSynx.</span>
         </div>
         <div>
-          <span className="tracking-widest">
+          <span className="tracking-widest text-sm">
             &copy;Copyright 2023 | HealthSynx
           </span>
         </div>

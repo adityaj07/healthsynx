@@ -24,14 +24,14 @@ function App() {
       {!isSingupOrLoginPage && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="#features" element={<Features />} />
+        <Route path="#features" element={<Features />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/forgotpassword" element={<Forgotpassword />} /> */}
+        <Route path="/forgotpassword" element={<Forgotpassword />} />
       </Routes>
-      {/* {!isSingupOrLoginPage && <Footer />} */}
+      {!isSingupOrLoginPage && <Footer />}
     </div>
   );
 }
