@@ -50,7 +50,7 @@ const Home = () => {
       </div>
       <Features />
       <Guide />
-      {/* <Pricing /> */}
+      <Pricing />
     </>
   );
 };
