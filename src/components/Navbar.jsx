@@ -77,7 +77,7 @@ const Navbar = () => {
 
       {/* MOBILE NAV  */}
       <div
-        className={`mobile-nav fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-50 lg:hidden transition-opacity pt-4 z-[45] ${
+        className={`mobile-nav fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-50 lg:hidden transition-opacity z-[45] pt-4 ${
           isNavOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       onClick={handleNavToggle}>
