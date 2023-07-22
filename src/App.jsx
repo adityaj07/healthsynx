@@ -22,7 +22,7 @@ function App() {
   return (
     <div className="">
       {!isSingupOrLoginPage && <Navbar />}
-      <Routes>
+      {/* <Routes>
         <Route path="/" element={<Home />} />
         <Route path="#features" element={<Features />} />
         <Route path="/about" element={<About />} />
@@ -31,7 +31,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/forgotpassword" element={<Forgotpassword />} />
       </Routes>
-      {!isSingupOrLoginPage && <Footer />}
+      {!isSingupOrLoginPage && <Footer />} */}
     </div>
   );
 }
