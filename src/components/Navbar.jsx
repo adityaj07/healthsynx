@@ -81,7 +81,7 @@ const Navbar = () => {
           isNavOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       onClick={handleNavToggle}>
-        <div className="bg-[#151515] mt-20 md:mt-0 rounded-3xl w-[60%] ml-auto mr-[10%] text-white p-4 text-sm shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
+        <div className="bg-[#151515] mt-20 md:mt-0 rounded-3xl w-[60%] ml-auto mr-[5%] text-white p-4 text-sm shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
           <ul className="flex flex-col items-center w-full justify-center gap-6 border-b-[1px] border-gray-500 pb-4 transition-transform duration-300 ">
             {links.map((link) => (
               <li
