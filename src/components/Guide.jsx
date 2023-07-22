@@ -4,11 +4,11 @@ import Card from "./ui/Card";
 
 const Guide = () => {
   return (
-    <div className="w-[70%] mx-auto mt-12 px-16 py-10 h-fit bg-[url('src/assets/guidedeco.svg')] bg-cover bg-center rounded-lg">
+    <div className="w-[90%] lg:w-[70%] mx-auto mt-12 p-6 md:mt-32 md:px-16 md:py-10 h-fit bg-[url('src/assets/guidedeco.svg')] bg-cover bg-center rounded-lg">
       <div className="flex flex-col justify-center items-center">
         <h1 className="text-start text-4xl font-bold mb-12 mt-4">How it works?</h1>
 
-        <div className="grid grid-cols-2 gap-4 w-[80%]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-[90%] lg:w-[70%]">
           <Card
             title="1. Register to HealthSynx"
             desc="It's totally free! You can just register if you are new on HealthSynx, follow simple registration steps and you're ready to get started! If you are already a user, just sign in!"

@@ -49,7 +49,7 @@ const Home = () => {
         
       </div>
       <Features />
-      {/* <Guide /> */}
+      <Guide />
       {/* <Pricing /> */}
     </>
   );

@@ -23,7 +23,7 @@ const Navbar = () => {
               alt="logo"
               className="rounded-md w-8 h-8 lg:w-[3rem] lg:h-[3rem]"
             />
-            <span className="text-base md:text-2xl font-extrabold">
+            <span className="text-lg md:text-2xl font-extrabold">
               HealthSynx.
             </span>
           </div>
