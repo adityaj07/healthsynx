@@ -10,8 +10,8 @@ import { FaArrowRight, FaArrowLeft} from "react-icons/fa";
 const Signup = () => {
   return (
     <div className="w-screen h-screen">
-      <div className="grid grid-cols-2 ">
-        <div className="left flex flex-col px-10 py-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2 ">
+        <div className="left flex flex-col px-10 py-8 md:py-12">
           <div className="logo flex gap-3 items-center">
             <img
               src={logo}
@@ -20,8 +20,8 @@ const Signup = () => {
             />
             <span className="text-2xl font-extrabold">HealthSynx.</span>
           </div>
-          <div className="signup flex flex-col justify-center items-center mt-12 h-[80%]">
-            <div className="flex flex-col w-[50%] gap-6">
+          <div className="signup flex flex-col justify-center items-center mt-20 md:mt-12 h-[80%]">
+            <div className="flex flex-col w-[95%] md:w-[50%] gap-6">
               <h1 className="text-4xl font-bold">Create your account</h1>
               <small className="mb-6">
                 Get Started with tracking your fitness.
@@ -45,7 +45,7 @@ const Signup = () => {
                 Sign up
                 <FaArrowRight />
               </button>
-              <div className="OR flex items-center justify-center my-6">
+              <div className="OR flex items-center justify-center my-2 md:my-6">
                 <hr className="w-[40%] h-[2px] bg-gray-400" />
                 <p className="text-center mx-4">or</p>
                 <hr className="w-[40%] h-[2px] bg-gray-400" />
@@ -55,15 +55,15 @@ const Signup = () => {
                 Sign up with Google
               </button>
               <p className="text-center relative">Already have an account? <Link to="/login"><span className="font-bold cursor-pointer hover:underline">Login</span></Link>
-              <img src={line} alt="line" className="absolute -top-2 right-5 w-[10rem]  -z-[5]"/>
+              <img src={line} alt="line" className="absolute -top-2 -right-8 md:right-5 w-[10rem] -z-[5]"/>
               </p>
             </div>
-            <Link to="/"><p className="mt-24 text-sm flex items-center gap-4 cursor-pointer hover:underline">
+            <Link to="/"><p className="mt-12 md:mt-24 text-sm flex items-center gap-4 cursor-pointer hover:underline">
             <FaArrowLeft/>
               Back to home page</p></Link>
           </div>
         </div>
-        <div className="right bg-black flex justify-center items-center rounded-l-3xl h-screen">
+        <div className="right bg-black lg:flex justify-center items-center rounded-l-3xl h-screen hidden ">
           <img
             src={logo1}
             alt="healthsynx image"
