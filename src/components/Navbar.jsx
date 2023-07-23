@@ -88,10 +88,10 @@ const Navbar = () => {
         <div className="bg-[#151515] mt-20 md:mt-0 rounded-3xl w-[60%] ml-auto mr-[5%] text-white p-4 text-sm shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
           <ul className="flex flex-col items-center w-full justify-center gap-6 border-b-[1px] border-gray-500 pb-4 transition-transform duration-300 ">
             {links.map((link) => (
-              <Link to={`/${link === "Home" ? "" : link.toLowerCase()}`}>
+              <Link to={`/${link === "Home" ? "" : link.toLowerCase()}`} className="p-2 px-4 cursor-pointer  transition-colors duration-200 hover:bg-white hover:text-blacks w-full text-center rounded-lg hover:text-black">
                 <li
                   key={link}
-                  className="p-2 px-4 cursor-pointer  transition-colors duration-200 hover:bg-white hover:text-blacks w-full text-center rounded-lg hover:text-black"
+                  
                 >
                   {link}
                 </li>
