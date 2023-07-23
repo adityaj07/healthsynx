@@ -8,20 +8,20 @@ import Button from "../components/ui/Button";
 
 const Contact = () => {
   return (
-    <div className=" mt-[10rem] -mb-24">
-      <div className="w-[70%] mx-auto flex flex-col">
+    <div className="mt-[10rem] -mb-24">
+    <div className="w-[90%] mx-auto px-4 md:px-0 flex flex-col">
         <div className="bg-black text-white rounded-lg px-6 py-8 flex flex-col justify-center items-center">
           <img
             src={logo}
             alt="logo"
-            className="w-[10rem] h-[10rem] rounded-lg mb-4"
+            className="w-[8rem] h-[8rem] md:w-[10rem] md:h-[10rem] rounded-lg mb-4"
           />
           <h1 className="text-4xl mb-2 font-bold text-center">
             Contact our friendly team
           </h1>
           <small className="text-base mb-3">Let us know how we can help.</small>
         </div>
-        <div className="flex px-6 py-8 gap-4 justify-center mt-5">
+        <div className="flex flex-col lg:flex-row px-6 py-8 gap-4 justify-center mt-5">
           <ContactCard
             title="Chat to Support"
             desc="We're here to help."

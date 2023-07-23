@@ -80,7 +80,7 @@ const Navbar = () => {
         className={`mobile-nav fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-50 lg:hidden transition-opacity z-[45] pt-4 ${
           isNavOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
-      onClick={handleNavToggle}>
+      onClick={handleNavToggle} onScroll={handleNavToggle}>
         <div className="bg-[#151515] mt-20 md:mt-0 rounded-3xl w-[60%] ml-auto mr-[5%] text-white p-4 text-sm shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
           <ul className="flex flex-col items-center w-full justify-center gap-6 border-b-[1px] border-gray-500 pb-4 transition-transform duration-300 ">
             {links.map((link) => (
