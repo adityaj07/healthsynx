@@ -19,7 +19,7 @@ const Login = () => {
             />
             <span className="text-2xl font-extrabold">HealthSynx.</span>
           </div>
-          <div className="signup flex flex-col justify-center items-center mt-20 md:mt-12 h-[80%]">
+          <div className="signup flex flex-col justify-center items-center mt-20 md:mt-24 h-[80%]">
             <div className="flex flex-col w-[95%] md:w-[50%] gap-6">
               <h1 className="text-4xl font-bold">Welcome back, Ram</h1>
               <small className="mb-6">

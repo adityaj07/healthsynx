@@ -10,7 +10,7 @@ import { FaArrowRight, FaArrowLeft} from "react-icons/fa";
 const Signup = () => {
   return (
     <div className="w-screen h-screen">
-      <div className="grid grid-cols-1 lg:grid-cols-2 ">
+      <div className="grid grid-cols-1 lg:grid-cols-2">
         <div className="left flex flex-col px-10 py-8 md:py-12">
           <div className="logo flex gap-3 items-center">
             <img
@@ -20,7 +20,7 @@ const Signup = () => {
             />
             <span className="text-2xl font-extrabold">HealthSynx.</span>
           </div>
-          <div className="signup flex flex-col justify-center items-center mt-20 md:mt-12 h-[80%]">
+          <div className="signup flex flex-col justify-center items-center mt-20 md:mt-24 h-[80%]">
             <div className="flex flex-col w-[95%] md:w-[50%] gap-6">
               <h1 className="text-4xl font-bold">Create your account</h1>
               <small className="mb-6">
