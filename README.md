@@ -1,6 +1,6 @@
 <h1 align="center"> HealthSynx. </h1>
 <p align="center">
-  <img src="src/assets/1.png" alt="HealthSynx Logo">
+  <img src="frontend/src/assets/1.png" alt="HealthSynx Logo">
 </p>
 
 #### HealthSynx is an innovative health and fitness tracker web application that empowers users to lead healthier lives. With seamless integration with wearable devices and personalized goal setting, HealthSynx provides comprehensive insights and tracking capabilities.
