@@ -1,4 +1,5 @@
 import React from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import Button from "./ui/Button";
 import { FaArrowRight } from "react-icons/fa";
@@ -11,7 +12,12 @@ import Pricing from "./Pricing";
 
 const Home = () => {
   return (
-    <>
+    <motion.div
+  className="notification__tray"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 0.5 }}
+>
       <div className="w-[90%] lg:w-[70%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 mt-20 md:mt-32 h-[35rem] z-40">
         <div className="text-start relative">
           <small className="px-4 py-2 text-xs rounded-full bg-gray-500 text-white w-fit absolute mt-12">
@@ -51,7 +57,7 @@ const Home = () => {
       <Features />
       <Guide />
       <Pricing />
-    </>
+    </motion.div>
   );
 };
 
