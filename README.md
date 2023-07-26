@@ -5,7 +5,7 @@
 
 #### HealthSynx is an innovative health and fitness tracker web application that empowers users to lead healthier lives. With seamless integration with wearable devices and personalized goal setting, HealthSynx provides comprehensive insights and tracking capabilities.
 
-## Tech used: 
+## Technology used: 
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
