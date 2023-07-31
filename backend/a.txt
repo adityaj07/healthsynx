@@ -1,0 +1,4 @@
+MONGO_URL=mongodb+srv://adityajoshi:J2trK3UC2z0SkkdI@cluster0.6okaz3x.mongodb.net/
+JWT_SECRET_KEY=jaishriram
+DOMAIN=https://localhost:3000
+PORT=3000

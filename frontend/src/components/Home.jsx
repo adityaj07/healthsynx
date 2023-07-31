@@ -13,11 +13,10 @@ import Pricing from "./Pricing";
 const Home = () => {
   return (
     <motion.div
-  className="notification__tray"
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  transition={{ duration: 0.5 }}
->
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="w-[90%] lg:w-[70%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 mt-20 md:mt-32 h-[35rem] z-40">
         <div className="text-start relative">
           <small className="px-4 py-2 text-xs rounded-full bg-gray-500 text-white w-fit absolute mt-12">
@@ -31,12 +30,17 @@ const Home = () => {
             Elevate Your Fitness Journey with HealthSynx: Your Personalized
             Health and Fitness Tracker
           </p>
-          <Link to="/signup"><div className="flex gap-2 items-center mt-6">
-            <Button text="Start tracking" className="bg-black text-white text-base" />
-            <div className="w-fit h-fit p-2 rounded-full bg-black">
-              <FaArrowRight className="invert cursor-pointer" />
+          <Link to="/signup">
+            <div className="flex gap-2 items-center mt-6">
+              <Button
+                text="Start tracking"
+                className="bg-black text-white text-base"
+              />
+              <div className="w-fit h-fit p-2 rounded-full bg-black">
+                <FaArrowRight className="invert cursor-pointer" />
+              </div>
             </div>
-          </div></Link>
+          </Link>
         </div>
 
         <div>
@@ -52,7 +56,6 @@ const Home = () => {
           alt="pattern"
           className="w-[15rem] h-[15rem] absolute top-72 -right-[8rem] hidden lg:block"
         />
-        
       </div>
       <Features />
       <Guide />

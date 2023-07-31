@@ -1,13 +1,16 @@
-const express = require("express")
-const server = express()
+import { config } from "dotenv";
+import express from "express";
+const server = express();
+import authRouter from "./routes/auth.js";
 
+config({ path: process.ENV })
+// dotenv.config()
 //bodyParser
 server.use(express.json());
+server.use("/auth",authRouter)
 
-server.get('/', (req, res) => {
-    res.send('Jai Shri Ram')
-  })
+// console.log(process.env.PORT)
   
-server.listen(3000, () => {
-    console.log("Server Started on port 3000...");
+server.listen(process.env.PORT, () => {
+    console.log("Server Started on port "+process.env.PORT);
   })

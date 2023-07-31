@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import logo1 from "../assets/2.png";
 import logo from "../assets/HealthSynx.png";
-import line from "../assets/line.svg"
-import google from "../assets/google.svg"
-import { FaArrowRight, FaArrowLeft} from "react-icons/fa";
-
+import line from "../assets/line.svg";
+import google from "../assets/google.svg";
+import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 
 const Signup = () => {
+  const [user, setUser] = useState({
+    email: "",
+    username: "",
+    password: "",
+  });
+
+  const onSignup = async () => {
+    try {
+    } catch (error) {}
+  };
+
   return (
     <div className="w-screen h-screen">
       <div className="grid grid-cols-1 lg:grid-cols-2">
@@ -26,22 +37,36 @@ const Signup = () => {
               <small className="mb-6">
                 Get Started with tracking your fitness.
               </small>
-              <input
-                type="text"
-                placeholder="Name"
-                className="outline-none bg-transparent px-4 py-2 text-black border-black border-b-[1px]"
-              />
+             
               <input
                 type="email"
                 placeholder="Email"
                 className="outline-none bg-transparent px-4 py-2 text-black border-black border-b-[1px]"
+                value={user.email}
+                onChange={(e)=>{
+                  setUser({...user, email: e.target.value})
+                }}
+              />
+               <input
+                type="text"
+                placeholder="Username"
+                className="outline-none bg-transparent px-4 py-2 text-black border-black border-b-[1px]"
+                value={user.username}
+                onChange={(e)=>{
+                  setUser({...user, username: e.target.value})
+                }}
+                
               />
               <input
                 type="password"
                 placeholder="Password"
                 className="outline-none bg-transparent px-4 py-2 text-black border-black border-b-[1px]"
+                value={user.password}
+                onChange={(e) => {
+                  setUser({ ...user, password: e.target.value });
+                }}
               />
-             <button className="bg-black text-white rounded-full w-full border-black border-[1px] px-4 py-2 flex items-center justify-center gap-4 hover:bg-white hover:text-black transition-colors duration-150">
+              <button className="bg-black text-white rounded-full w-full border-black border-[1px] px-4 py-2 flex items-center justify-center gap-4 hover:bg-white hover:text-black transition-colors duration-150" onClick={onSignup}>
                 Sign up
                 <FaArrowRight />
               </button>
@@ -51,16 +76,29 @@ const Signup = () => {
                 <hr className="w-[40%] h-[2px] bg-gray-400" />
               </div>
               <button className="bg-white text-black rounded-full w-full border-black border-[1px] px-4 py-2 flex items-center justify-center gap-4 hover:bg-black hover:text-white transition-colors duration-150">
-                <img src={google} alt="google" className="w-[1.5rem]"/>
+                <img src={google} alt="google" className="w-[1.5rem]" />
                 Sign up with Google
               </button>
-              <p className="text-center relative">Already have an account? <Link to="/login"><span className="font-bold cursor-pointer hover:underline">Login</span></Link>
-              <img src={line} alt="line" className="absolute -top-2 -right-8 md:right-5 w-[10rem] -z-[5]"/>
+              <p className="text-center relative">
+                Already have an account?{" "}
+                <Link to="/login">
+                  <span className="font-bold cursor-pointer hover:underline">
+                    Login
+                  </span>
+                </Link>
+                <img
+                  src={line}
+                  alt="line"
+                  className="absolute -top-2 -right-8 md:right-5 w-[10rem] -z-[5]"
+                />
               </p>
             </div>
-            <Link to="/"><p className="mt-12 md:mt-24 text-sm flex items-center gap-4 cursor-pointer hover:underline">
-            <FaArrowLeft/>
-              Back to home page</p></Link>
+            <Link to="/">
+              <p className="mt-12 md:mt-24 text-sm flex items-center gap-4 cursor-pointer hover:underline">
+                <FaArrowLeft />
+                Back to home page
+              </p>
+            </Link>
           </div>
         </div>
         <div className="right bg-black lg:flex justify-center items-center rounded-l-3xl h-screen hidden ">
