@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import logo1 from "../assets/2.png";
 import logo from "../assets/HealthSynx.png";
@@ -8,6 +8,7 @@ import google from "../assets/google.svg";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 
 const Signup = () => {
+  const navigate = useNavigate();
   const [user, setUser] = useState({
     email: "",
     username: "",
@@ -16,8 +17,15 @@ const Signup = () => {
 
   const onSignup = async () => {
     try {
-    } catch (error) {}
+      const res = await axios.post("http://localhost:3000/auth/signup");
+      console.log(res.data);
+      res.status(201).json({ message: "User created successfully", data: res.data });
+      navigate("/");
+    } catch (error) {
+      console.log("Error occurred", error.message);
+    }
   };
+  
 
   return (
     <div className="w-screen h-screen">
