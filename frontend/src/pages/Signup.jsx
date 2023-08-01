@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import toast, { Toaster } from 'react-hot-toast';
 import logo1 from "../assets/2.png";
 import logo from "../assets/HealthSynx.png";
 import line from "../assets/line.svg";
@@ -14,13 +15,27 @@ const Signup = () => {
     username: "",
     password: "",
   });
+  const [buttonDisabled, setButtonDisabled] = useState(false);
+
+  useEffect(() => {
+    if (
+      user.email.length > 0 &&
+      user.username.length > 0 &&
+      user.password.length > 0
+    ) {
+      setButtonDisabled(false);
+    } else {
+      setButtonDisabled(true);
+    }
+  }, [user]);
 
   const onSignup = async () => {
     try {
-      const res = await axios.post("http://localhost:3000/auth/signup");
+      const res = await axios.post("http://localhost:3000/auth/signup", user);
       console.log(res.data);
-      res.status(201).json({ message: "User created successfully", data: res.data });
-      navigate("/");
+      toast.success('Registered successfully');
+      setButtonDisabled(true);
+      navigate("/login");
     } catch (error) {
       console.log("Error occurred", error.message);
     }
@@ -55,6 +70,7 @@ const Signup = () => {
                   setUser({...user, email: e.target.value})
                 }}
               />
+           
                <input
                 type="text"
                 placeholder="Username"
@@ -65,6 +81,7 @@ const Signup = () => {
                 }}
                 
               />
+              
               <input
                 type="password"
                 placeholder="Password"
@@ -74,10 +91,11 @@ const Signup = () => {
                   setUser({ ...user, password: e.target.value });
                 }}
               />
-              <button className="bg-black text-white rounded-full w-full border-black border-[1px] px-4 py-2 flex items-center justify-center gap-4 hover:bg-white hover:text-black transition-colors duration-150" onClick={onSignup}>
+              <button className={`bg-black text-white rounded-full w-full border-black border-[1px] px-4 py-2 flex items-center justify-center gap-4 hover:bg-white hover:text-black transition-colors duration-150 ${buttonDisabled ? "cursor-not-allowed disabled:hover:bg-gray-600" : ""}`} onClick={onSignup} >
                 Sign up
                 <FaArrowRight />
               </button>
+              <Toaster />
               <div className="OR flex items-center justify-center my-2 md:my-6">
                 <hr className="w-[40%] h-[2px] bg-gray-400" />
                 <p className="text-center mx-4">or</p>

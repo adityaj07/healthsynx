@@ -1,19 +1,30 @@
 import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
 import User from "../models/user.js";
 import { config } from "dotenv";
+import { generateToken } from "../utils/authUtils.js";
 import { connectDB } from "../database/dbConfig.js";
-config({ path: process.env });
 
-//connect to DB
+//connect to db
 connectDB();
 
-//signup
+config({ path: process.env });
+
+// Signup
 export const signup = async (req, res) => {
   try {
     const { username, email, password } = req.body;
-    console.log(req.body);
 
+    // Check if user with the same email or username already exists
+    const existingUser = await User.findOne({ $or: [{ email }, { username }] });
+    if (existingUser) {
+      if (existingUser.email === email) {
+        return res.status(409).json({ message: "Email already exists" });
+      } else {
+        return res.status(409).json({ message: "Username not available" });
+      }
+    }
+
+    // Hash the password
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
@@ -23,52 +34,43 @@ export const signup = async (req, res) => {
       password: hashedPassword,
     });
 
+
     const savedUser = await newUser.save();
-    res.status(201).json({ message: "User created successfully", savedUser });
+
+    res.status(201).json({ message: "User created successfully"});
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 };
 
-//login
+// Login
 export const login = async (req, res) => {
-  try {
-    const { email, password } = req.body;
-
-    //check if user exists in db
-    const user = await User.findOne({ email: email });
-    if (!user) return res.status(400).json({ message: "User does not exist" });
-
-    console.log(user.password);
-    console.log(user.email);
-    console.log(user);
-
-    //check if password is correct
-    const validPassword = await bcrypt.compare(password, user.password);
-    if (!validPassword)
-      return res.status(400).json({ message: "Invalid credentials" });
-
-    //create token data
-    const tokenData = {
-      id: user._id,
-      username: user.username,
-      email: user.email,
-    };
-
-    //create token
-    const token = jwt.sign(tokenData, process.env.JWT_SECRET_KEY, {
-      expiresIn: "1h",
-    });
-
-    // setting cookies
-    const response = res.status(200).json({
-      message: "Login Successful",
-    });
-
-    return response.cookie("token", token, {
-      httpOnly: true,
-    });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-};
+    try {
+      const { email, password } = req.body;
+  
+      // Check if user exists in db
+      const user = await User.findOne({ email });
+      if (!user) {
+        return res.status(404).json({ message: "User does not exist" });
+      }
+  
+      // Check if password is correct
+      const validPassword = await bcrypt.compare(password, user.password);
+      if (!validPassword) {
+        return res.status(401).json({ message: "Invalid credentials" });
+      }
+  
+      // Create and sign the JWT token
+      const token = generateToken(user);
+  
+      // Setting cookies
+      res.cookie("token", token, {
+        httpOnly: true,
+        // Add other options if needed (e.g., secure: true for HTTPS)
+      });
+  
+      res.status(200).json({ message: "Login Successful", token });
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  };
