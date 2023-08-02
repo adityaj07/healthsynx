@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import toast, { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from "react-hot-toast";
 import logo1 from "../assets/2.png";
 import logo from "../assets/HealthSynx.png";
 import line from "../assets/line.svg";
@@ -17,10 +17,7 @@ const Login = () => {
   const [buttonDisabled, setButtonDisabled] = useState(false);
 
   useEffect(() => {
-    if (
-      user.email.length > 0 &&
-      user.password.length > 0
-    ) {
+    if (user.email.length > 0 && user.password.length > 0) {
       setButtonDisabled(false);
     } else {
       setButtonDisabled(true);
@@ -31,14 +28,13 @@ const Login = () => {
     try {
       const res = await axios.post("http://localhost:3000/auth/login", user);
       console.log(res.data);
-      toast.success('Logged in successfully');
+      toast.success("Logged in successfully");
       setButtonDisabled(true);
       navigate("/dashboard");
     } catch (error) {
       console.log("Error occurred", error.message);
     }
   };
-
 
   return (
     <div className="w-screen h-screen">
@@ -54,7 +50,7 @@ const Login = () => {
           </div>
           <div className="signup flex flex-col justify-center items-center mt-20 md:mt-24 h-[80%]">
             <div className="flex flex-col w-[95%] md:w-[50%] gap-6">
-              <h1 className="text-4xl font-bold">Welcome back, Ram</h1>
+              <h1 className="text-4xl font-bold">Welcome back</h1>
               <small className="mb-6">
                 Enter your details or continue with Google.
               </small>
@@ -63,8 +59,8 @@ const Login = () => {
                 placeholder="Email"
                 className="outline-none bg-transparent px-4 py-2 text-black border-black border-b-[1px]"
                 value={user.email}
-                onChange={(e)=>{
-                  setUser({...user, email: e.target.value})
+                onChange={(e) => {
+                  setUser({ ...user, email: e.target.value });
                 }}
               />
               <input
@@ -81,7 +77,14 @@ const Login = () => {
                   Forgot password?
                 </div>
               </Link>
-              <button className={`bg-black text-white rounded-full w-full border-black border-[1px] px-4 py-2 flex items-center justify-center gap-4 hover:bg-white hover:text-black transition-colors duration-150 ${buttonDisabled ? "cursor-not-allowed disabled:hover:bg-gray-600" : ""}`} onClick={onLogin} >
+              <button
+                className={`bg-black text-white rounded-full w-full border-black border-[1px] px-4 py-2 flex items-center justify-center gap-4 hover:bg-white hover:text-black transition-colors duration-150 ${
+                  buttonDisabled
+                    ? "cursor-not-allowed disabled:hover:bg-gray-600"
+                    : ""
+                }`}
+                onClick={onLogin}
+              >
                 Log in
                 <FaArrowRight />
               </button>

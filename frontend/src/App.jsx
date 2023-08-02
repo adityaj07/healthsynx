@@ -20,7 +20,7 @@ function App() {
     location.pathname === "/forgotpassword";
 
   return (
-    <div className="">
+    <div >
       {!isSingupOrLoginPage && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
