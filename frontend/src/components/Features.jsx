@@ -11,7 +11,7 @@ import { FaMagic } from "react-icons/fa";
 
 const Features = () => {
   return (
-    <div className="bg-black w-[90%] lg:w-[70%] mx-auto  bg-[url('src/assets/noise.svg')] bg-cover bg-center rounded-xl mt-[20rem] p-6 md:mt-32 md:px-16 md:py-10">
+    <div className="bg-black w-[90%] lg:w-[70%] mx-auto  bg-[url('src/assets/noise.svg')] bg-cover bg-center rounded-xl mt-[24rem] p-6 md:mt-32 md:px-16 md:py-10">
       <h1 className="text-white text-3xl md:text-4xl text-start font-bold">Features</h1>
       <p className="text-gray-300 text-base md:text-lg text-start mt-4 mb-8">
         Discover the powerful features that make HealthSynx the ultimate health
