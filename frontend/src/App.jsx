@@ -10,6 +10,7 @@ import Signup from "./pages/Signup";
 import Features from "./components/Features";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   const location = useLocation();
@@ -17,7 +18,8 @@ function App() {
   const isSingupOrLoginPage =
     location.pathname === "/signup" ||
     location.pathname === "/login" ||
-    location.pathname === "/forgotpassword";
+    location.pathname === "/forgotpassword" ||
+    location.pathname === "/dashboard";
 
   return (
     <div >
@@ -30,8 +32,10 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/forgotpassword" element={<Forgotpassword />} />
+        <Route path="/dashboard" element={<Dashboard/>} />
       </Routes>
       {!isSingupOrLoginPage && <Footer />}
+      
     </div>
   );
 }

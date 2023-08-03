@@ -91,7 +91,6 @@ const Navbar = () => {
               <Link to={`/${link === "Home" ? "" : link.toLowerCase()}`} className="p-2 px-4 cursor-pointer  transition-colors duration-200 hover:bg-white hover:text-blacks w-full text-center rounded-lg hover:text-black">
                 <li
                   key={link}
-                  
                 >
                   {link}
                 </li>
