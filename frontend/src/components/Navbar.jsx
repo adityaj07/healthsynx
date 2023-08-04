@@ -45,13 +45,13 @@ const Navbar = () => {
             <Link to="/signup">
               <Button
                 text="Signup"
-                className="bg-black text-white  border border-black hover:bg-white hover:text-black transition-colors duration-150 "
+                className="bg-black text-white  border border-black hover:bg-white hover:text-black transition-colors duration-150 rounded-lg "
               />
             </Link>
             <Link to="/login">
               <Button
                 text="Login"
-                className="border border-black hover:bg-black hover:text-white transition-colors duration-150"
+                className="border border-black hover:bg-black hover:text-white transition-colors duration-150 rounded-lg"
               />
             </Link>
           </div>
@@ -101,13 +101,13 @@ const Navbar = () => {
             <Link to="/signup" className="w-full">
               <Button
                 text="Signup"
-                className="border border-black bg-white text-black w-full hover:bg-[#C0DEDD] transition-colors duration-150"
+                className="border border-black bg-white text-black w-full hover:bg-[#C0DEDD] transition-colors duration-150 rounded-lg"
               />
             </Link>
             <Link to="/login" className="w-full">
               <Button
                 text="Login"
-                className="border border-white  w-full hover:bg-[#F1DFDE] hover:text-black transition-colors duration-150"
+                className="border border-white  w-full hover:bg-[#F1DFDE] hover:text-black transition-colors duration-150 rounded-lg"
               />
             </Link>
           </div>

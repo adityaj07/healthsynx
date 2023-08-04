@@ -34,7 +34,7 @@ const Home = () => {
             <div className="flex gap-2 items-center mt-6">
               <Button
                 text="Start tracking"
-                className="bg-black text-white text-base"
+                className="bg-black text-white text-base rounded-lg"
               />
               <div className="w-fit h-fit p-2 rounded-full bg-black">
                 <FaArrowRight className="invert cursor-pointer" />
