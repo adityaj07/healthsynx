@@ -2,7 +2,7 @@ import "./App.css";
 import React from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Home from "./components/Home";
+import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import Forgotpassword from "./pages/Forgotpassword";
 import Login from "./pages/Login";

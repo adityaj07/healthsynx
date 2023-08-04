@@ -1,13 +1,13 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import Button from "./ui/Button";
+import Button from "../components/ui/Button";
 import { FaArrowRight } from "react-icons/fa";
 import hero from "../assets/hero.jpg";
 import pattern from "../assets/ooorganize.svg";
-import Features from "./Features";
-import Guide from "./Guide";
-import Pricing from "./Pricing";
+import Features from "../components/Features";
+import Guide from "../components/Guide";
+import Pricing from "../components/Pricing";
 // import pattern from "../assets/pattern.svg"
 
 const Home = () => {
