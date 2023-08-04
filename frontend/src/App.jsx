@@ -16,6 +16,7 @@ import Goals from "./pages/Dashboard/Goals";
 import Nutrition from "./pages/Dashboard/Nutrition";
 import Wearables from "./pages/Dashboard/Wearables";
 import Settings from "./pages/Dashboard/Settings";
+import DashboardHome from "./pages/Dashboard/DashboardHome";
 
 function App() {
   const location = useLocation();
@@ -37,13 +38,14 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/forgotpassword" element={<Forgotpassword />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/dashboard/*"></Route>
-        <Route path="/activity" element={<Activity />} />
-        <Route path="/goals" element={<Goals />} />
-        <Route path="/nutrition" element={<Nutrition />} />
-        <Route path="/wearables" element={<Wearables />} />
-        <Route path="/settings" element={<Settings />} />
+        <Route path="/dashboard" element={<Dashboard />}>
+          <Route path="/dashboard" element={<DashboardHome />} />
+          <Route path="/dashboard/activity" element={<Activity />} />
+          <Route path="/dashboard/goals" element={<Goals />} />
+          <Route path="/dashboard/nutrition" element={<Nutrition />} />
+          <Route path="/dashboard/wearables" element={<Wearables />} />
+          <Route path="/dashboard/settings" element={<Settings />} />
+        </Route>
       </Routes>
       {islandingPage && <Footer />}
     </div>
