@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import axios from "axios";
-import toast, { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from "react-hot-toast";
 import logo1 from "../assets/2.png";
 import logo from "../assets/HealthSynx.png";
 import line from "../assets/line.svg";
@@ -33,14 +34,13 @@ const Signup = () => {
     try {
       const res = await axios.post("http://localhost:3000/auth/signup", user);
       console.log(res.data);
-      toast.success('Registered successfully');
+      toast.success("Registered successfully");
       setButtonDisabled(true);
       navigate("/login");
     } catch (error) {
       console.log("Error occurred", error.message);
     }
   };
-  
 
   return (
     <div className="w-screen h-screen">
@@ -54,34 +54,38 @@ const Signup = () => {
             />
             <span className="text-2xl font-extrabold">HealthSynx.</span>
           </div>
-          <div className="signup flex flex-col justify-center items-center mt-20 md:mt-24 h-[80%]">
+          <motion.div
+            className="signup flex flex-col justify-center items-center mt-20 md:mt-24 h-[80%]"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3 }}
+          >
             <div className="flex flex-col w-[95%] md:w-[50%] gap-6">
               <h1 className="text-4xl font-bold">Create your account</h1>
               <small className="mb-6">
                 Get Started with tracking your fitness.
               </small>
-             
+
               <input
                 type="email"
                 placeholder="Email"
                 className="outline-none bg-transparent px-4 py-2 text-black border-black border-b-[1px]"
                 value={user.email}
-                onChange={(e)=>{
-                  setUser({...user, email: e.target.value})
+                onChange={(e) => {
+                  setUser({ ...user, email: e.target.value });
                 }}
               />
-           
-               <input
+
+              <input
                 type="text"
                 placeholder="Username"
                 className="outline-none bg-transparent px-4 py-2 text-black border-black border-b-[1px]"
                 value={user.username}
-                onChange={(e)=>{
-                  setUser({...user, username: e.target.value})
+                onChange={(e) => {
+                  setUser({ ...user, username: e.target.value });
                 }}
-                
               />
-              
+
               <input
                 type="password"
                 placeholder="Password"
@@ -91,7 +95,14 @@ const Signup = () => {
                   setUser({ ...user, password: e.target.value });
                 }}
               />
-              <button className={`bg-black text-white rounded-full w-full border-black border-[1px] px-4 py-2 flex items-center justify-center gap-4 hover:bg-white hover:text-black transition-colors duration-150 ${buttonDisabled ? "cursor-not-allowed disabled:hover:bg-gray-600" : ""}`} onClick={onSignup} >
+              <button
+                className={`bg-black text-white rounded-full w-full border-black border-[1px] px-4 py-2 flex items-center justify-center gap-4 hover:bg-white hover:text-black transition-colors duration-150 ${
+                  buttonDisabled
+                    ? "cursor-not-allowed disabled:hover:bg-gray-600"
+                    : ""
+                }`}
+                onClick={onSignup}
+              >
                 Sign up
                 <FaArrowRight />
               </button>
@@ -125,7 +136,7 @@ const Signup = () => {
                 Back to home page
               </p>
             </Link>
-          </div>
+          </motion.div>
         </div>
         <div className="right bg-black lg:flex justify-center items-center rounded-l-3xl h-screen hidden ">
           <img

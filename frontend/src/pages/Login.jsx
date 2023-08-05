@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import logo1 from "../assets/2.png";
@@ -48,7 +49,12 @@ const Login = () => {
             />
             <span className="text-2xl font-extrabold">HealthSynx.</span>
           </div>
-          <div className="signup flex flex-col justify-center items-center mt-20 md:mt-24 h-[80%]">
+          <motion.div
+            className="login flex flex-col justify-center items-center mt-20 md:mt-24 h-[80%]"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3 }}
+          >
             <div className="flex flex-col w-[95%] md:w-[50%] gap-6">
               <h1 className="text-4xl font-bold">Welcome back</h1>
               <small className="mb-6">
@@ -118,7 +124,7 @@ const Login = () => {
                 Back to home page
               </p>
             </Link>
-          </div>
+          </motion.div>
         </div>
         <div className="right bg-black lg:flex justify-center items-center rounded-l-3xl h-screen hidden ">
           <img
