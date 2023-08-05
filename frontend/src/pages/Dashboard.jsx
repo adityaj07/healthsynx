@@ -1,15 +1,20 @@
 import React from "react";
 import Sidebar from "../components/Sidebar";
 import { Outlet } from "react-router-dom";
+import NavDashboard from "../components/NavDashboard";
 
 const Dashboard = () => {
   return (
-    <div className="flex">
+    <div className="flex bg-black h-screen">
       <div className="w-[30%] lg:w-[20%]">
-      <Sidebar />
+        <Sidebar />
       </div>
-      <div className="h-screen md:w-[70%] lg:w-[80%] bg-white ">
-        <Outlet></Outlet>
+
+      <div className="min-h-[96vh] md:w-[70%] lg:w-[80%] rounded-[2rem] m-4 bg-white overflow-hidden">
+        <NavDashboard />
+        <div className="text-black h-full">
+          <Outlet></Outlet>
+        </div>
       </div>
     </div>
   );

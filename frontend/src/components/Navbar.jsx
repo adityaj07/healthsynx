@@ -34,9 +34,9 @@ const Navbar = () => {
                   key={link}
                   className="p-2 md:px-2 lg:px-4 cursor-pointer hover:text-gray-300 transition-colors duration-200"
                 >
-                  <Link to={`/${link === "Home" ? "" : link.toLowerCase()}`}>
+              <Link to={`/${link === "Home" ? "" : link.toLowerCase()}`}  className="focus:font-bold">
                     {link}
-                  </Link>
+                </Link>
                 </li>
               ))}
             </ul>

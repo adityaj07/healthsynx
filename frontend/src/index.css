@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* .active{
+    @apply border-r-[0.7rem] bg-gray-400 bg-opacity-20 transition-colors duration-200;
+} */

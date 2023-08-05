@@ -8,7 +8,7 @@ import { GiFruitBowl } from "react-icons/gi";
 import { TbDeviceWatchHeart } from "react-icons/tb";
 import { FiSettings } from "react-icons/fi";
 import { LuLogOut } from "react-icons/lu";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const menuLinks = [
   {
@@ -53,11 +53,12 @@ const Sidebar = () => {
         <SidebarProfile />
         <ul className="flex flex-col items-center justify-center gap-4 text-white mt-12 w-full">
           {menuLinks.map((link) => (
-            <Link
+            <NavLink
+              key={link.title}
               to={`/dashboard${
                 link.title === "Dashboard" ? "" : "/" + link.title.toLowerCase()
               }`}
-              className="cursor-pointer rounded-lg hover:bg-gray-400 hover:bg-opacity-20 transition-colors duration-200 w-full gap-4"
+              className={`cursor-pointer rounded-lg transition-colors duration-200 w-full gap-4 hover:bg-gray-400 hover:bg-opacity-20`}
             >
               <li
                 key={link.title}
@@ -66,7 +67,7 @@ const Sidebar = () => {
                 <span>{<link.icon size={20} />}</span>
                 <span>{link.title}</span>
               </li>
-            </Link>
+            </NavLink>
           ))}
         </ul>
 

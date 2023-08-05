@@ -12,6 +12,7 @@ import Pricing from "../components/Pricing";
 
 const Home = () => {
   return (
+  
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -22,7 +23,10 @@ const Home = () => {
           <small className="px-4 py-2 text-xs rounded-full bg-gray-500 text-white w-fit absolute mt-12">
             Integration with wearable⚡
           </small>
-          <h1 className="text-[3rem] sm:text-[3.5rem] md:text-6xl md:leading-snug font-extrabold mt-24 mb-3 md:mb-6">
+          <h1
+            className="text-[3rem] sm:text-[3.5rem] md:text-6xl md:leading-snug font-extrabold mt-24 mb-3 md:mb-6"
+          
+          >
             Get Fit, <br /> Get Strong, <br />
             Get Healthy!
           </h1>
@@ -60,7 +64,8 @@ const Home = () => {
       <Features />
       <Guide />
       <Pricing />
-    </motion.div>
+   </motion.div>
+   
   );
 };
 
