@@ -12,7 +12,7 @@ const Dashboard = () => {
 
       <div className="min-h-[96vh] md:w-[70%] lg:w-[80%] rounded-[2rem] m-4 bg-white overflow-hidden">
         <NavDashboard />
-        <div className="text-black h-full">
+        <div className="text-black h-full overflow-auto">
           <Outlet></Outlet>
         </div>
       </div>

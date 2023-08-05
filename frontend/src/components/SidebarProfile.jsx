@@ -11,7 +11,7 @@ const SidebarProfile = () => {
           alt="user profile picture"
           className="w-[8rem] rounded-full"
         />
-        <h1 className="font-bold text-2xl">Hi, Aditya!</h1>
+        <h1 className="font-bold text-2xl">Aditya Joshi</h1>
       <Button text="Edit" className="border-[1px] rounded-full hover:bg-white hover:text-black transition-colors duration-200"/>
       </div>
     
