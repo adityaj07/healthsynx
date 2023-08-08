@@ -4,8 +4,7 @@ import Button from "./ui/Button";
 
 const SidebarProfile = () => {
   return (
-   
-      <div className="flex flex-col justify-center items-center gap-4 pt-4 text-white">
+     <div className="flex flex-col justify-center items-center gap-4 pt-4 text-white">
         <img
           src={profilePic}
           alt="user profile picture"
