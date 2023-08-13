@@ -29,11 +29,12 @@ const Login = () => {
     try {
       const res = await axios.post("http://localhost:3000/auth/login", user);
       console.log(res.data);
-      toast.success("Logged in successfully");
       setButtonDisabled(true);
       navigate("/dashboard");
+      toast.success("Logged in successfully");
     } catch (error) {
       console.log("Error occurred", error.message);
+      toast.error("Login failed. Please check your credentials");
     }
   };
 
@@ -94,7 +95,7 @@ const Login = () => {
                 Log in
                 <FaArrowRight />
               </button>
-              <Toaster />
+              {/* <Toaster/> */}
               <div className="OR flex items-center justify-center my-2 md:my-6">
                 <hr className="w-[40%] h-[2px] bg-gray-400" />
                 <p className="text-center mx-4">or</p>

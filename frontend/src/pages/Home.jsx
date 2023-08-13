@@ -8,7 +8,6 @@ import pattern from "../assets/ooorganize.svg";
 import Features from "../components/Features";
 import Guide from "../components/Guide";
 import Pricing from "../components/Pricing";
-// import pattern from "../assets/pattern.svg"
 
 const Home = () => {
   return (

@@ -1,4 +1,6 @@
 import React from "react";
+import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
 import logo from "../assets/HealthSynx.png";
 import SidebarProfile from "../components/SidebarProfile";
 import { BiSolidDashboard } from "react-icons/bi";
@@ -8,7 +10,7 @@ import { GiFruitBowl } from "react-icons/gi";
 import { TbDeviceWatchHeart } from "react-icons/tb";
 import { FiSettings } from "react-icons/fi";
 import { LuLogOut } from "react-icons/lu";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const menuLinks = [
   {
@@ -38,8 +40,21 @@ const menuLinks = [
 ];
 
 const Sidebar = () => {
+  const navigate = useNavigate();
+  const onLogout = async () => {
+    try {
+      await axios.post("http://localhost:3000/auth/logout");
+      navigate("/login");
+      toast.success("Logged out successfully");
+    } catch (error) {
+      console.log("Error occurred", error.message);
+      toast.error("An error occurred during logout. Please try again.");
+    }
+  };
   return (
+
     <div className="fixed top-0 left-0 h-screen rounded-r-3xl z-40 w-[30%] lg:w-[20%] bg-black ">
+      
       <div className="flex flex-col gap-4 py-6 px-4 ">
         <div className="logo flex gap-3 items-center justify-center border-b-[1px] pb-4">
           <img src={logo} alt="logo" className="rounded-md w-[3rem] h-[3rem]" />
@@ -71,10 +86,11 @@ const Sidebar = () => {
           ))}
         </ul>
 
-        <button className="flex justify-start items-center gap-4 text-white ounded-lg hover:bg-gray-400 hover:bg-opacity-20 transition-colors duration-200 p-2 md:px-2 lg:px-4 cursor-pointer rounded-lg mt-48 ">
-          <LuLogOut size={20} />
+        <button className="flex justify-start items-center gap-4 text-white ounded-lg hover:bg-gray-400 hover:bg-opacity-20 transition-colors duration-200 p-2 md:px-2 lg:px-4 cursor-pointer rounded-lg mt-48 " onClick={onLogout}>
+          <LuLogOut size={20}/>
           Log out
         </button>
+        {/* <Toaster/> */}
       </div>
     </div>
   );

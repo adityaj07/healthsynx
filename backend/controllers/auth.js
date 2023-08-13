@@ -66,11 +66,26 @@ export const login = async (req, res) => {
       // Setting cookies
       res.cookie("token", token, {
         httpOnly: true,
-        // Add other options if needed (e.g., secure: true for HTTPS)
-      });
+
+      }); 
   
       res.status(200).json({ message: "Login Successful", token });
     } catch (error) {
       res.status(500).json({ error: error.message });
     }
   };
+
+
+//logout
+export const logout = (req, res) => {
+  try {
+    // Clear the token cookie to log the user out
+    res.clearCookie("token");
+    res.status(200).json({ message: "Logout Successful" });
+    
+    // Redirect the user to the home page
+    res.redirect("/");
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};

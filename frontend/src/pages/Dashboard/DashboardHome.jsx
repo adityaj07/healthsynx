@@ -7,7 +7,7 @@ import DashboardHomeCard from "../../components/DashboardHomeCard";
 const DashboardHome = () => {
   return (
     <>
-      <div className="mt-6 mx-4 flex gap-4 justify-between items-center">
+      <div className="mt-6 mx-4 flex flex-col lg:flex-row gap-4 justify-between items-center">
         <DashboardHomeCard
           cardName="Steps Taken"
           className="bg-[#C0DEDD]"
@@ -27,6 +27,7 @@ const DashboardHome = () => {
           metricCount="8hrs"
         />
       </div>
+      
       <div>
         <div>
 
