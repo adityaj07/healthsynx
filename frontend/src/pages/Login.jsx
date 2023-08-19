@@ -30,8 +30,8 @@ const Login = () => {
       const res = await axios.post("http://localhost:3000/auth/login", user);
       console.log(res.data);
       setButtonDisabled(true);
-      navigate("/dashboard");
       toast.success("Logged in successfully");
+      navigate("/dashboard");
     } catch (error) {
       console.log("Error occurred", error.message);
       toast.error("Login failed. Please check your credentials");

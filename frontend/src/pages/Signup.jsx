@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
-// import { GoogleOAuthProvider } from '@react-oauth/google';
+import { GoogleLogin } from '@react-oauth/google';
 import logo1 from "../assets/2.png";
 import logo from "../assets/HealthSynx.png";
 import line from "../assets/line.svg";
@@ -113,10 +113,10 @@ const Signup = () => {
                 <p className="text-center mx-4">or</p>
                 <hr className="w-[40%] h-[2px] bg-gray-400" />
               </div>
-              <button className="bg-white text-black rounded-full w-full border-black border-[1px] px-4 py-2 flex items-center justify-center gap-4 hover:bg-black hover:text-white transition-colors duration-150">
+              <GoogleLogin className="bg-white text-black rounded-full w-full border-black border-[1px] px-4 py-2 flex items-center justify-center gap-4 hover:bg-black hover:text-white transition-colors duration-150">
                 <img src={google} alt="google" className="w-[1.5rem]" />
                 Sign up with Google
-              </button>
+              </GoogleLogin>
               <p className="text-center relative">
                 Already have an account?{" "}
                 <Link to="/login">

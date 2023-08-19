@@ -17,6 +17,9 @@ import Nutrition from "./pages/Dashboard/Nutrition";
 import Wearables from "./pages/Dashboard/Wearables";
 import Settings from "./pages/Dashboard/Settings";
 import DashboardHome from "./pages/Dashboard/DashboardHome";
+import { Toaster } from "react-hot-toast";
+import { GoogleOAuthProvider } from "@react-oauth/google";
+import Profile from "./pages/Dashboard/Profile";
 
 function App() {
   const location = useLocation();
@@ -29,25 +32,30 @@ function App() {
 
   return (
     <div>
-      {islandingPage && <Navbar />}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/features" element={<Features />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/forgotpassword" element={<Forgotpassword />} />
-        <Route path="/dashboard" element={<Dashboard />}>
-          <Route path="/dashboard" element={<DashboardHome />} />
-          <Route path="/dashboard/activity" element={<Activity />} />
-          <Route path="/dashboard/goals" element={<Goals />} />
-          <Route path="/dashboard/nutrition" element={<Nutrition />} />
-          <Route path="/dashboard/wearables" element={<Wearables />} />
-          <Route path="/dashboard/settings" element={<Settings />} />
-        </Route>
-      </Routes>
-      {islandingPage && <Footer />}
+      <GoogleOAuthProvider clientId="290047704036-v4g4r85bt2m7f9p9bopvdlbbtvcn7o61.apps.googleusercontent.com">
+        {islandingPage && <Navbar />}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/features" element={<Features />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/forgotpassword" element={<Forgotpassword />} />
+          <Route path="/dashboard" element={<Dashboard />}>
+            <Route path="/dashboard" element={<DashboardHome />} />
+            <Route path="/dashboard/profile/:username" element={<Profile />} />
+            <Route path="/dashboard/activity" element={<Activity />} />
+            <Route path="/dashboard/goals" element={<Goals />} />
+            <Route path="/dashboard/nutrition" element={<Nutrition />} />
+            <Route path="/dashboard/wearables" element={<Wearables />} />
+            <Route path="/dashboard/settings" element={<Settings />} />
+          </Route>
+        </Routes>
+        <Toaster />
+        {islandingPage && <Footer />}
+      </GoogleOAuthProvider>
+      ;
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import bcrypt from "bcrypt";
 import User from "../models/user.js";
+import jwt from "jsonwebtoken";
 import { config } from "dotenv";
 import { generateToken } from "../utils/authUtils.js";
 import { connectDB } from "../database/dbConfig.js";
@@ -8,6 +9,25 @@ import { connectDB } from "../database/dbConfig.js";
 connectDB();
 
 config({ path: process.env });
+
+export const getAuthenticatedUser = async (req, res) => {
+  const token = req.cookies.token;
+
+  try {
+    if(!token){
+      return res.status(404).json("User not found");
+    }
+    const decodedToken = jwt.verify(token, process.env.JWT_SECRET_KEY);
+    // console.log(decodedToken)
+    const authenticatedUserId = decodedToken.id;
+
+    const user = await User.findById(authenticatedUserId).select("+email +username").exec();
+
+    res.status(200).json({message: "User found!!", user})
+  } catch (error) {
+    res.status(404).json({ error: error.message });
+  }
+}
 
 // Signup
 export const signup = async (req, res) => {
@@ -66,7 +86,6 @@ export const login = async (req, res) => {
       // Setting cookies
       res.cookie("token", token, {
         httpOnly: true,
-
       }); 
   
       res.status(200).json({ message: "Login Successful", token });
@@ -82,9 +101,6 @@ export const logout = (req, res) => {
     // Clear the token cookie to log the user out
     res.clearCookie("token");
     res.status(200).json({ message: "Logout Successful" });
-    
-    // Redirect the user to the home page
-    res.redirect("/");
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
