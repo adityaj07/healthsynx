@@ -11,6 +11,7 @@ export const generateToken = (user) => {
     email: user.email,
   };
 
+  
   return jwt.sign(tokenData, process.env.JWT_SECRET_KEY, {
     expiresIn: "1h",
   });

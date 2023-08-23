@@ -9,7 +9,10 @@ config({ path: process.ENV })
 // dotenv.config()
 //bodyParser
 server.use(express.json());
-server.use(cors());
+server.use(cors({
+  credentials: true,
+  origin: process.env.FRONTEND_URL,
+}));
 server.use(cookieParser());
 server.use("/auth",authRouter)
 

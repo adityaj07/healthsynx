@@ -55,7 +55,6 @@ function App() {
         <Toaster />
         {islandingPage && <Footer />}
       </GoogleOAuthProvider>
-      ;
     </div>
   );
 }

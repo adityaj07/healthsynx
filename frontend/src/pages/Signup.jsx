@@ -37,7 +37,7 @@ const Signup = () => {
       console.log(res.data);
       toast.success("Registered successfully");
       setButtonDisabled(true);
-      navigate("/login");
+      navigate("/dashboard");
     } catch (error) {
       console.log("Error occurred", error.message);
     }

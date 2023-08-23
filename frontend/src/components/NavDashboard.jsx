@@ -13,11 +13,14 @@ const dayOfWeek = currentDate.toLocaleString("en-US", { weekday: "long" });
 
 const formattedDate = `${dayOfWeek}, ${day}${daySuffix} ${monthAbbreviation}, ${year}`;
 
-const NavDashboard = () => {
+const NavDashboard = ({ userInfo }) => {
+  if (!userInfo) {
+    return "Loading..."; 
+  }
   return (
     <div className="flex justify-between items-center h-[4rem] p-4 border-b-[1px] border-slate-500  mx-5 mt-3 ">
       <h1 className="text-2xl">
-        Hello, <span className="font-bold">User</span>
+        Hello, <span className="font-bold">{userInfo.data?.username}</span>
       </h1>
       <div className="flex items-center gap-6">
         <span>{formattedDate}</span>

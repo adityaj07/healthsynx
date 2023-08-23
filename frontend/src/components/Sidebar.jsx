@@ -39,7 +39,7 @@ const menuLinks = [
   },
 ];
 
-const Sidebar = () => {
+const Sidebar = ({userInfo}) => {
   const navigate = useNavigate();
   const onLogout = async () => {
     try {
@@ -53,7 +53,7 @@ const Sidebar = () => {
     }
   };
   return (
-    <div className="fixed top-0 left-0 h-screen rounded-r-3xl z-40 w-[30%] lg:w-[20%] bg-black ">
+    <div className="fixed top-0 left-0  h-screen rounded-r-3xl z-40 w-[30%] lg:w-[20%] bg-black ">
       <div className="flex flex-col gap-4 py-6 px-4 ">
         <div className="logo flex gap-3 items-center justify-center border-b-[1px] pb-4">
           <img src={logo} alt="logo" className="rounded-md w-[3rem] h-[3rem]" />
@@ -64,7 +64,7 @@ const Sidebar = () => {
       </div>
 
       <div className="max-w-[90%] mx-auto flex flex-col justify-between">
-        <SidebarProfile />
+        <SidebarProfile userInfo={userInfo}/>
         <ul className="flex flex-col items-center justify-center gap-4 text-white mt-12 w-full">
           {menuLinks.map((link) => (
             <NavLink

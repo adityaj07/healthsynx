@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import axios from "axios";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import logo1 from "../assets/2.png";
 import logo from "../assets/HealthSynx.png";
 import line from "../assets/line.svg";
 import google from "../assets/google.svg";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
+import axiosInstance from "../api/axiosInstance";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -27,7 +28,7 @@ const Login = () => {
 
   const onLogin = async () => {
     try {
-      const res = await axios.post("http://localhost:3000/auth/login", user);
+      const res = await axiosInstance.post("http://localhost:3000/auth/login", user);
       console.log(res.data);
       setButtonDisabled(true);
       toast.success("Logged in successfully");
