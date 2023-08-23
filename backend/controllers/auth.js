@@ -1,110 +1,6 @@
-// import bcrypt from "bcrypt";
-// import User from "../models/user.js";
-// import jwt from "jsonwebtoken";
-// import { config } from "dotenv";
-// import { generateToken } from "../utils/authUtils.js";
-// import { connectDB } from "../database/dbConfig.js";
-
-// //connect to db
-// connectDB();
-
-// config({ path: process.env });
-
-
-
-// // Signup
-// export const signup = async (req, res) => {
-//   try {
-//     const { username, email, password } = req.body;
-
-//     // Check if user with the same email or username already exists
-//     const existingUser = await User.findOne({ $or: [{ email }, { username }] });
-//     if (existingUser) {
-//       if (existingUser.email === email) {
-//         return res.status(409).json({ message: "Email already exists" });
-//       } else {
-//         return res.status(409).json({ message: "Username not available" });
-//       }
-//     }
-
-//     // Hash the password
-//     const salt = await bcrypt.genSalt(10);
-//     const hashedPassword = await bcrypt.hash(password, salt);
-
-//     const newUser = new User({
-//       username,
-//       email,
-//       password: hashedPassword,
-//     });
-//     // console.log(newUser);
-
-//     // Create and sign the JWT token
-//     const token = generateToken(newUser);
-//     newUser.token = token;
-//     // Save the new user to the database
-//     const savedUser = await newUser.save();
-//     console.log(savedUser);
-
-//     // Setting cookies
-//     res.cookie("token", token, {
-//       httpOnly: true,
-//     });
-
-//     res
-//       .status(201)
-//       .json({ message: "User created successfully", user: savedUser });
-//   } catch (error) {
-//     res.status(500).json({ error: error.message });
-//   }
-// };
-
-// // Login
-// export const login = async (req, res) => {
-//   try {
-//     const { email, password } = req.body;
-//     // console.log(email, password);
-
-//     // Check if user exists in db
-//     const user = await User.findOne({ email }).select("+password");
-//     // console.log(user);
-//     if (!user) {
-//       return res.status(404).json({ message: "User does not exist" });
-//     }
-
-//     // Check if password is correct
-//     const validPassword = await bcrypt.compare(password, user.password);
-//     if (!validPassword) {
-//       return res.status(401).json({ message: "Invalid credentials" });
-//     }
-
-//     // Create and sign the JWT token
-//     const token = generateToken(user);
-
-//     // Setting cookies
-//     res.cookie("token", token, {
-//       httpOnly: true,
-//     });
-
-//     res.status(200).json({ message: "Login Successful", token });
-//   } catch (error) {
-//     res.status(500).json({ error: error.message });
-//   }
-// };
-
-// //logout
-// export const logout = (req, res) => {
-//   try {
-//     // Clear the token cookie to log the user out
-//     res.clearCookie("token");
-//     res.status(200).json({ message: "Logout Successfull" });
-//   } catch (error) {
-//     res.status(500).json({ error: error.message });
-//   }
-// };
-
 import bcrypt from "bcrypt";
 import User from "../models/user.js";
-import jwt from "jsonwebtoken";
+// import jwt from "jsonwebtoken";
 import { config } from "dotenv";
 import { generateToken } from "../utils/authUtils.js";
 import { connectDB } from "../database/dbConfig.js";
@@ -138,6 +34,11 @@ export const signup = async (req, res) => {
       email,
       password: hashedPassword,
     });
+
+    const token = generateToken(newUser);
+    delete newUser.passowrd;
+
+    res.cookie('token', token, { httpOnly: true, secure: true, sameSite: 'strict' });
 
     res.status(201).json({
       status: "success",

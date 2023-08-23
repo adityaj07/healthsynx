@@ -9,6 +9,7 @@ import logo from "../assets/HealthSynx.png";
 import line from "../assets/line.svg";
 import google from "../assets/google.svg";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
+import axiosInstance from "../api/axiosInstance";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ const Signup = () => {
 
   const onSignup = async () => {
     try {
-      const res = await axios.post("http://localhost:3000/auth/signup", user);
+      const res = await axiosInstance.post("http://localhost:3000/auth/signup", user);
       console.log(res.data);
       toast.success("Registered successfully");
       setButtonDisabled(true);

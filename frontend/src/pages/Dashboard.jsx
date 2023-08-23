@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
 import { Outlet } from "react-router-dom";
 import NavDashboard from "../components/NavDashboard";
-// import axios from "axios";
 import axiosInstance from "../api/axiosInstance";
-// import { fetchAuthenticatedUser } from "../helpers/fetchAuthenticatedUser";
+
 
 const Dashboard = () => {
   const [userInfo, setUserInfo] = useState(null);
