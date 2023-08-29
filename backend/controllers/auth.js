@@ -87,6 +87,8 @@ export const logout = (req, res) => {
   }
 };
 
+
+// get authentucated user
 export const getAuthenticatedUser = async (req, res) => {
   try {
     const authenticatedUser = req.user;
