@@ -17,6 +17,7 @@ export const getGoals = async (req, res) => {
     }
 }
 
+//create a new goal
 export const createNewGoal = async (req, res) => {
     const {
         userId,
