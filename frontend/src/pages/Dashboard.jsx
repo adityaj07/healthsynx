@@ -12,9 +12,9 @@ const Dashboard = () => {
     const fetchUserInfo = async () => {
       try {
         const { data: user } = await axiosInstance.get("http://localhost:3000/auth/");
-        console.log(user);
+        // console.log(user);
         setUserInfo(user);
-        console.log(userInfo);
+        // console.log(userInfo);
       } catch (error) {
         console.log("Error fetching user info:", error.message);
         if (error.response) {

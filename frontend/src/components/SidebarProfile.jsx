@@ -7,11 +7,7 @@ const SidebarProfile = ({userInfo}) => {
   if (!userInfo) {
     return "Loading..."; 
   }
-
-  
-  console.log(userInfo);
-
-
+  // console.log(userInfo);
   return (
     <div className="flex flex-col justify-center items-center gap-4 pt-4 text-white">
       <img

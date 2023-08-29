@@ -11,6 +11,7 @@ import { TbDeviceWatchHeart } from "react-icons/tb";
 import { FiSettings } from "react-icons/fi";
 import { LuLogOut } from "react-icons/lu";
 import { NavLink, useNavigate } from "react-router-dom";
+import axiosInstance from "../api/axiosInstance";
 
 const menuLinks = [
   {
@@ -43,8 +44,8 @@ const Sidebar = ({userInfo}) => {
   const navigate = useNavigate();
   const onLogout = async () => {
     try {
-      const res = await axios.post("http://localhost:3000/auth/logout");
-      console.log(res);
+      const res = await axiosInstance.post("http://localhost:3000/auth/logout");
+      // console.log(res);
       navigate("/login");
       toast.success("Logged out successfully");
     } catch (error) {

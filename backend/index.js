@@ -4,6 +4,7 @@ const server = express();
 import cors from "cors"; 
 import cookieParser from "cookie-parser"
 import authRouter from "./routes/auth.js";
+import goalRouter from "./routes/goal.js";
 
 config({ path: process.ENV })
 // dotenv.config()
@@ -14,7 +15,8 @@ server.use(cors({
   origin: process.env.FRONTEND_URL,
 }));
 server.use(cookieParser());
-server.use("/auth",authRouter)
+server.use("/auth",authRouter);
+server.use("/goals",goalRouter);
 
 // console.log(process.env.PORT)
   

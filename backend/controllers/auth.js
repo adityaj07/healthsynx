@@ -1,6 +1,5 @@
 import bcrypt from "bcrypt";
 import User from "../models/user.js";
-// import jwt from "jsonwebtoken";
 import { config } from "dotenv";
 import { generateToken } from "../utils/authUtils.js";
 import { connectDB } from "../database/dbConfig.js";
