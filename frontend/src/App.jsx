@@ -11,14 +11,13 @@ import Features from "./components/Features";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Dashboard from "./pages/Dashboard";
-import Activity from "./pages/Dashboard/Activity";
+import Exercise from "./pages/Dashboard/Exercise";
 import Goals from "./pages/Dashboard/Goals";
 import Nutrition from "./pages/Dashboard/Nutrition";
 import Wearables from "./pages/Dashboard/Wearables";
 import Settings from "./pages/Dashboard/Settings";
 import DashboardHome from "./pages/Dashboard/DashboardHome";
 import { Toaster } from "react-hot-toast";
-import { GoogleOAuthProvider } from "@react-oauth/google";
 import Profile from "./pages/Dashboard/Profile";
 
 function App() {
@@ -32,7 +31,7 @@ function App() {
 
   return (
     <div>
-      <GoogleOAuthProvider clientId="290047704036-v4g4r85bt2m7f9p9bopvdlbbtvcn7o61.apps.googleusercontent.com">
+    
         {islandingPage && <Navbar />}
         <Routes>
           <Route path="/" element={<Home />} />
@@ -45,7 +44,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />}>
             <Route path="/dashboard" element={<DashboardHome />} />
             <Route path="/dashboard/profile/:username" element={<Profile />} />
-            <Route path="/dashboard/activity" element={<Activity />} />
+            <Route path="/dashboard/exercise" element={<Exercise />} />
             <Route path="/dashboard/goals" element={<Goals />} />
             <Route path="/dashboard/nutrition" element={<Nutrition />} />
             <Route path="/dashboard/wearables" element={<Wearables />} />
@@ -54,7 +53,7 @@ function App() {
         </Routes>
         <Toaster />
         {islandingPage && <Footer />}
-      </GoogleOAuthProvider>
+     
     </div>
   );
 }

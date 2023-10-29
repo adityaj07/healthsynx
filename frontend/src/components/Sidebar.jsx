@@ -19,7 +19,7 @@ const menuLinks = [
     icon: BiSolidDashboard,
   },
   {
-    title: "Activity",
+    title: "Exercise",
     icon: FiActivity,
   },
   {

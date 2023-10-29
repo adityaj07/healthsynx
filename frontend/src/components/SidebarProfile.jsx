@@ -16,11 +16,11 @@ const SidebarProfile = ({userInfo}) => {
         className="w-[8rem] rounded-full"
       />
       <h1 className="font-bold text-2xl">{userInfo.data?.username}</h1>
-      <Link to={`/dashboard/profile/${userInfo.data?.id}`}><button
+      {/* <Link to={`/dashboard/profile/${userInfo.data?.id}`}><button
         className="border-[1px] px-4 py-2 rounded-full hover:bg-white hover:text-black transition-colors duration-200"
       >
         Edit
-      </button></Link>
+      </button></Link> */}
     </div>
   );
 };

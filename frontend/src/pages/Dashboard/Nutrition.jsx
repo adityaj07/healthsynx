@@ -1,7 +1,8 @@
 import React from "react";
+import CalorieTracker from "../../components/CalorieTracker";
 
 const Nutrition = () => {
-  return <h1 className="text-center">Nutrtion</h1>;
+  return <CalorieTracker />;
 };
 
 export default Nutrition;

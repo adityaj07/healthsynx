@@ -3,6 +3,7 @@ import { GiFootprint } from "react-icons/gi";
 import { FaMoon } from "react-icons/fa";
 import { AiFillHeart } from "react-icons/ai";
 import DashboardHomeCard from "../../components/DashboardHomeCard";
+import GoalSetting from "../../components/GoalSetting";
 
 const DashboardHome = () => {
   return (
@@ -32,8 +33,9 @@ const DashboardHome = () => {
         <div>
 
         </div>
-        <div>
-          <h1>Goals</h1>
+        <div className="mt-12">
+          <GoalSetting />
+          
           <div>
 
           </div>

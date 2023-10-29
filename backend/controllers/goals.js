@@ -1,4 +1,4 @@
-import { config } from "dotenv";
+// import { config } from "dotenv";
 import { connectDB } from "../database/dbConfig.js";
 import GoalModel from "../models/goals.js";
 
