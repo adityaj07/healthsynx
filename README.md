@@ -67,3 +67,34 @@
     </td>
   </tr>
 </table>
+
+## Project Setup
+
+1. **Clone the Repository:**
+
+   ```bash
+   git clone https://github.com/adityaj07/healthsynx.git
+   cd healthsynx
+
+2. **Navigate to frontend folder and install all the dependencies and run the frontend server**:
+    
+    ```bash
+    cd frontend
+    pnpm install
+    pnpm run dev
+    ```
+3. **Now navigate to the backend folder and setup the environment variables**:
+    ```
+    cd backend
+    ```
+    - Copy the .env.example file and create a new file named .env.
+    - Update the variables in the .env file with your specific configuration.
+
+4. **Install the dependencies and run the backend server**:
+    ```
+    pnpm install
+    pnpm run dev
+
+- Recommended ports for 
+    - frontend: 5173
+    - backend: 3000
