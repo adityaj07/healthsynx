@@ -34,10 +34,6 @@ const menuLinks = [
     title: "Wearables",
     icon: TbDeviceWatchHeart,
   },
-  {
-    title: "Settings",
-    icon: FiSettings,
-  },
 ];
 
 const Sidebar = ({userInfo}) => {

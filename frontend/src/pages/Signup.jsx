@@ -36,7 +36,7 @@ const Signup = () => {
   const onSignup = async () => {
     try {
       const res = await axiosInstance.post("http://localhost:3000/auth/signup", user);
-      console.log(res.data);
+      // console.log(res.data);
       toast.success("Registered successfully");
       setButtonDisabled(true);
       navigate("/dashboard");

@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
     if (token) {
       const userId = token.split('=')[1]; // Extract user ID from token
       // Fetch user data from server using the provided user ID
-      axiosInstance.get(`http://localhost:5000/api/user/${userId}`)
+      axiosInstance.get(`http://localhost:3000/api/user/${userId}`)
         .then(response => {
           setUser(response.data);
         })

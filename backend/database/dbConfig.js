@@ -24,16 +24,3 @@ export async function connectDB(){
         console.log("Mongodb connection error" + error);
     }
 }
-
-// import mongoose from "mongoose";
-
-// export const connectDB = () => {
-//     mongoose.connect(process.env.MONGO_URL, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true
-// },
-// (err)=>{
-//     if(err) return console.log(err);
-//     console.log("Connected to DB")
-// }
-// )}
