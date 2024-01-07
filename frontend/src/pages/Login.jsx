@@ -43,14 +43,14 @@ const Login = () => {
     <div className="w-screen h-screen">
       <div className="grid grid-cols-1 lg:grid-cols-2 ">
         <div className="left flex flex-col px-10 py-8 md:py-12">
-          <div className="logo flex gap-3 items-center">
+          <Link className="logo flex gap-3 items-center" to="/">
             <img
               src={logo}
               alt="logo"
               className="rounded-md w-[3rem] h-[3rem]"
             />
             <span className="text-2xl font-extrabold">HealthSynx.</span>
-          </div>
+          </Link>
           <motion.div
             className="login flex flex-col justify-center items-center mt-20 md:mt-24 h-[80%]"
             initial={{ opacity: 0 }}
@@ -81,10 +81,16 @@ const Login = () => {
                 }}
               />
               <Link to="/forgotpassword">
-                <div className="flex justify-end items-center font-semibold underline md:hover:underline cursor-pointer text-sm mb-4">
+                <div className="flex justify-end items-center font-semibold underline md:hover:underline cursor-pointer text-sm mb-2">
                   Forgot password?
                 </div>
               </Link>
+              <div className="flex flex-col">
+              <small className="font-semibold">Test credentials</small>
+              <small>Email: user@gmail.com</small>
+              <small>Password: 123456</small>
+
+              </div>
               <button
                 className={`bg-black text-white rounded-full w-full border-black border-[1px] px-4 py-2 flex items-center justify-center gap-4 hover:bg-white hover:text-black transition-colors duration-150 ${
                   buttonDisabled

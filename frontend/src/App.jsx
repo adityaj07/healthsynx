@@ -15,7 +15,6 @@ import Exercise from "./pages/Dashboard/Exercise";
 import Goals from "./pages/Dashboard/Goals";
 import Nutrition from "./pages/Dashboard/Nutrition";
 import Wearables from "./pages/Dashboard/Wearables";
-import Settings from "./pages/Dashboard/Settings";
 import DashboardHome from "./pages/Dashboard/DashboardHome";
 import { Toaster } from "react-hot-toast";
 import Profile from "./pages/Dashboard/Profile";
@@ -48,7 +47,6 @@ function App() {
             <Route path="/dashboard/goals" element={<Goals />} />
             <Route path="/dashboard/nutrition" element={<Nutrition />} />
             <Route path="/dashboard/wearables" element={<Wearables />} />
-            <Route path="/dashboard/settings" element={<Settings />} />
           </Route>
         </Routes>
         <Toaster />

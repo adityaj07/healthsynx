@@ -35,7 +35,10 @@ const Signup = () => {
 
   const onSignup = async () => {
     try {
-      const res = await axiosInstance.post("http://localhost:3000/auth/signup", user);
+      const res = await axiosInstance.post(
+        "http://localhost:3000/auth/signup",
+        user
+      );
       // console.log(res.data);
       toast.success("Registered successfully");
       setButtonDisabled(true);
@@ -49,14 +52,14 @@ const Signup = () => {
     <div className="w-screen h-screen">
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <div className="left flex flex-col px-10 py-8 md:py-12">
-          <div className="logo flex gap-3 items-center">
+          <Link className="logo flex gap-3 items-center" to="/">
             <img
               src={logo}
               alt="logo"
               className="rounded-md w-[3rem] h-[3rem]"
             />
             <span className="text-2xl font-extrabold">HealthSynx.</span>
-          </div>
+          </Link>
           <motion.div
             className="signup flex flex-col justify-center items-center mt-20 md:mt-24 h-[80%]"
             initial={{ opacity: 0 }}
@@ -98,6 +101,7 @@ const Signup = () => {
                   setUser({ ...user, password: e.target.value });
                 }}
               />
+
               <button
                 className={`bg-black text-white rounded-full w-full border-black border-[1px] px-4 py-2 flex items-center justify-center gap-4 hover:bg-white hover:text-black transition-colors duration-150 ${
                   buttonDisabled
@@ -115,8 +119,11 @@ const Signup = () => {
                 <p className="text-center mx-4">or</p>
                 <hr className="w-[40%] h-[2px] bg-gray-400" />
               </div>
-              <Button text="Sign up with Google" className="bg-white text-black rounded-full w-full border-black border-[1px] px-4 py-2 flex items-center justify-center gap-4 hover:bg-black hover:text-white transition-colors duration-150">
-                <img src={google} alt="google" className="w-[1.5rem]" />
+              <Button
+                text="Sign up with Google"
+                className="bg-white text-black rounded-full w-full border-black border-[1px] px-4 py-2 flex items-center justify-center gap-4 hover:bg-black hover:text-white transition-colors duration-150"
+              >
+                 <img src={google} alt="google" className="w-[1.5rem]" />
                 Sign up with Google
               </Button>
               <p className="text-center relative">
@@ -156,7 +163,6 @@ const Signup = () => {
 export default Signup;
 
 
-// import React, { useEffect, useState } from "react";
 // import { Link, useNavigate } from "react-router-dom";
 // import { motion, AnimatePresence } from "framer-motion";
 // import axios from "axios";

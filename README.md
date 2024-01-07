@@ -17,8 +17,53 @@
 ## Features
 
 - Personalized Goal Setting: Set custom health and fitness goals tailored to your preferences and track your progress.
-- Activity Tracking Made Easy: Effortlessly log exercises, monitor steps, distance, and calories burned to stay active and motivated.
 - Nutritional Insights: Track meals, monitor calorie intake, and make informed choices for a balanced diet.
-- Progress Monitoring and Analytics: Visualize your progress, trends, and achievements with interactive charts and analytics.
-- Seamless Integration with Fitness Wearables: Connect and sync data from your favorite fitness wearables for a comprehensive view of your well-being.
 - User-Friendly Interface: Enjoy a sleek and intuitive interface for seamless navigation and quick access to information.
+
+## Features to be implemented
+- Seamless Integration with Fitness Wearables: Connect and sync data from your favorite fitness wearables for a comprehensive view of your well-being.
+- Dashboard to be made responsive
+- Google login and dark mode
+
+## Screenshots: 
+
+### Desktop View:
+
+<table>
+  <tr>
+    <td>
+      <img src="frontend/src/assets/Desktop1.png" alt="DesktopImage 1">
+    </td>
+    <td>
+      <img src="frontend/src/assets/Desktop2.png" alt="DesktopImage 2">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="frontend/src/assets/Desktop3.png" alt="DesktopImage 3">
+    </td>
+    <td>
+      <img src="frontend/src/assets/Desktop4.png" alt="DesktopImage 4">
+    </td>
+  </tr>
+</table>
+
+### Mobile View:
+<table>
+  <tr>
+    <td>
+      <img src="frontend/src/assets/Mobile-1.jpeg" alt="MobileImage 1">
+    </td>
+    <td>
+      <img src="frontend/src/assets/Mobile-2.jpeg" alt="MobileImage 2">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="frontend/src/assets/Mobile-3.jpeg" alt="MobileImage 3">
+    </td>
+    <td>
+      <img src="frontend/src/assets/Mobile-4.jpeg" alt="MobileImage 4">
+    </td>
+  </tr>
+</table>

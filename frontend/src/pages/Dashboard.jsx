@@ -33,7 +33,7 @@ const Dashboard = () => {
         <Sidebar userInfo={userInfo} />
       </div>
 
-      <div className=" md:w-[70%] lg:w-[80%] rounded-[2rem] m-4 bg-white ">
+      <div className=" md:w-[70%] lg:w-[80%] rounded-[2rem] m-4 bg-white">
         <NavDashboard userInfo={userInfo} />
         <div className="text-black ">
           <Outlet />
