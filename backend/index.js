@@ -12,6 +12,7 @@ config({ path: process.env })
 server.use(cors({
   credentials: true,
   origin: process.env.FRONTEND_URL,
+  methods: ["POST", "GET"]
 }));
 server.use(express.json());
 server.use(cookieParser());
