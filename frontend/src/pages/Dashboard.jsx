@@ -11,7 +11,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchUserInfo = async () => {
       try {
-        const { data: user } = await axiosInstance.get("http://localhost:3000/auth/");
+        const { data: user } = await axiosInstance.get("https://healthsynx-backend.vercel.app/auth/");
         // console.log(user);
         setUserInfo(user);
         // console.log(userInfo);

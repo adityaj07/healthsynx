@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
     if (token) {
       const userId = token.split('=')[1]; // Extract user ID from token
       // Fetch user data from server using the provided user ID
-      axiosInstance.get(`http://localhost:3000/api/user/${userId}`)
+      axiosInstance.get(`https://healthsynx-backend.vercel.app/api/user/${userId}`)
         .then(response => {
           setUser(response.data);
         })
@@ -29,7 +29,7 @@ export const AuthProvider = ({ children }) => {
   const logout = () => {
     setUser(null);
     // Send a request to your server to clear the token
-    axiosInstance.get('http://localhost:5000/api/logout')
+    axiosInstance.get('https://healthsynx-backend.vercel.app/api/logout')
       .then(response => {
         console.log(response.data);
       })

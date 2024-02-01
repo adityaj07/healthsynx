@@ -46,7 +46,7 @@ const Sidebar = ({ userInfo }) => {
   };
   const onLogout = async () => {
     try {
-      const res = await axiosInstance.post("http://localhost:3000/auth/logout");
+      const res = await axiosInstance.post("https://healthsynx-backend.vercel.app/auth/logout");
       // console.log(res);
       navigate("/login");
       toast.success("Logged out successfully");

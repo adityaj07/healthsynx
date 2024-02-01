@@ -36,7 +36,7 @@ const Signup = () => {
   const onSignup = async () => {
     try {
       const res = await axiosInstance.post(
-        "http://localhost:3000/auth/signup",
+        "https://healthsynx-backend.vercel.app/auth/signup",
         user
       );
       // console.log(res.data);

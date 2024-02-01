@@ -28,7 +28,7 @@ const Login = () => {
 
   const onLogin = async () => {
     try {
-      const res = await axiosInstance.post("http://localhost:3000/auth/login", user);
+      const res = await axiosInstance.post("https://healthsynx-backend.vercel.app/auth/login", user);
       console.log(res.data);
       setButtonDisabled(true);
       toast.success("Logged in successfully");
