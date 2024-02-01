@@ -34,10 +34,6 @@ export const signup = async (req, res) => {
       password: hashedPassword,
     });
 
-    const token = generateToken(newUser);
-    delete newUser.passowrd;
-
-    res.cookie('token', token, { httpOnly: true, secure: true, sameSite: 'strict' });
 
     res.status(201).json({
       status: "success",
