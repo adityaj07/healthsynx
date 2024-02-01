@@ -1,11 +1,7 @@
 import bcrypt from "bcrypt";
 import User from "../models/user.js";
+import jwt from "jsonwebtoken";
 import { config } from "dotenv";
-import { generateToken } from "../utils/authUtils.js";
-import { connectDB } from "../database/dbConfig.js";
-
-//connecting the DB
-connectDB();
 
 config({ path: process.env });
 
@@ -23,17 +19,16 @@ export const signup = async (req, res) => {
       }
     }
 
-    //Hash the password
+    // Hash the password
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
-    //create a new user
+    // Create a new user
     const newUser = await User.create({
       username,
       email,
       password: hashedPassword,
     });
-
 
     res.status(201).json({
       status: "success",
@@ -41,7 +36,13 @@ export const signup = async (req, res) => {
       user: newUser,
     });
   } catch (error) {
-    res.status(500).json({ status: "error", message: "An error occurred" });
+    res
+      .status(500)
+      .json({
+        status: "error",
+        message: "An error occurred",
+        error: error.message,
+      });
   }
 };
 
@@ -50,8 +51,7 @@ export const login = async (req, res) => {
     const { email, password } = req.body;
 
     // Check if user exists in db
-    const user = await User.findOne({ email }).select("+username +email +password");
-    // console.log(user);
+    const user = await User.findOne({ email });
     if (!user) {
       return res.status(404).json({ message: "User does not exist" });
     }
@@ -62,17 +62,32 @@ export const login = async (req, res) => {
       return res.status(401).json({ message: "Invalid credentials" });
     }
 
-    const token = generateToken(user);
-    delete user.passowrd;
+    // Generate token
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET_KEY, {
+      expiresIn: "1d",
+    });
 
-    res.cookie('token', token, { httpOnly: true, secure: true, sameSite: 'strict' });
-    res.json({ status: 'success', message: 'Login successful', user: user });
+    res.cookie("token", token, {
+      httpOnly: true,
+      secure: true,
+      sameSite: "strict",
+    });
+    res.json({
+      status: "success",
+      message: "Login successful",
+      user: { username: user.username, email: user.email },
+    });
   } catch (error) {
-    res.status(500).json({ status: "error", message: "An error occurred", error: error.message });
+    res
+      .status(500)
+      .json({
+        status: "error",
+        message: "An error occurred",
+        error: error.message,
+      });
   }
 };
 
-//logout
 export const logout = (req, res) => {
   try {
     // Clear the token cookie to log the user out
@@ -82,15 +97,3 @@ export const logout = (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
-
-
-// get authentucated user
-export const getAuthenticatedUser = async (req, res) => {
-  try {
-    const authenticatedUser = req.user;
-    res.json({ status: 'success', data: authenticatedUser });
-  } catch (error) {
-    res.status(500).json({ status: "error", message: "An error occurred", error: error.message });
-  }
- 
-}
